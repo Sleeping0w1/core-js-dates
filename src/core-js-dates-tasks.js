@@ -222,26 +222,8 @@ function getNextFridayThe13th(date) {
  * Date(2024, 10, 10) => 4
  */
 function getQuarter(date) {
-  switch (date.toLocaleDateString('en-EN', { month: 'short' })) {
-    case 'Jan':
-    case 'Feb':
-    case 'Mar':
-      return 1;
-    case 'Apr':
-    case 'May':
-    case 'Jun':
-      return 2;
-    case 'Jul':
-    case 'Aug':
-    case 'Sep':
-      return 3;
-    case 'Oct':
-    case 'Nov':
-    case 'Dec':
-      return 4;
-    default:
-      return -1;
-  }
+  const month = date.getMonth();
+  return 1 + Math.floor(month / 3);
 }
 
 /**
